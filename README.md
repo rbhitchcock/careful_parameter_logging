@@ -1,4 +1,4 @@
-# Careful::Parameter::Logging
+# careful_parameter_logging
 
 Keep your logs clean
 
@@ -6,7 +6,7 @@ Keep your logs clean
 
 Add this line to your application's Gemfile:
 
-    gem 'careful-parameter-logging'
+    gem 'careful_parameter_logging'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install careful-parameter-logging
+    $ gem install careful_parameter_logging
 
 ## Usage
 
@@ -22,7 +22,7 @@ TODO: Write usage instructions here
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/careful-parameter-logging/fork )
+1. Fork it ( https://github.com/[my-github-username]/careful_parameter_logging/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
