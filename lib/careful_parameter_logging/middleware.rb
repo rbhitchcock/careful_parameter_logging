@@ -14,16 +14,17 @@ module CarefulParameterLogging
     end
 
     def call(env)
+      return @app.call env if @careful_parameters.blank?
       begin
         controller = Rails.application.routes.recognize_path(env[REQUEST_PATH])[:controller]
       rescue ActionController::RoutingError
-        controller = nil
+        return @app.call env
       end
-      if controller and !@careful_parameters[controller.to_sym].blank?
+      if !@careful_parameters[controller.to_sym].blank?
         params = env[FORM_HASH] || Rack::Utils.parse_nested_query(env[QUERY_PARAMS]) || {}
         env[PARAMETER_FILTER] += filter_params_without_records(controller.to_sym, params)
       end
-      status, headers, response = @app.call(env)
+      @app.call env
     end
 
     private
