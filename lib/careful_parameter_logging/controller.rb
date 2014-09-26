@@ -12,6 +12,14 @@ module CarefulParameterLogging
           super
         end
       end
+
+      def respond_to?(meth, include_private = false)
+        if meth.to_s =~ /^verify_\w+_parameter_for_\w+$/
+          true
+        else
+          super
+        end
+      end
     end
   end
 end
